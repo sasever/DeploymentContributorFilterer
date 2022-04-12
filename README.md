@@ -4,7 +4,7 @@ Generic implementation of a DacFx deployment contributor in .net. Use this tool 
 Original documentation and discussion adapted from:
 *https://the.agilesql.club/2015/01/howto-filter-dacpac-deployments/*
 
-You can also refer to The microsoft documentation on [developing  and using deployment contributors](https://docs.microsoft.com/sql/ssdt/use-deployment-contributors-to-customize-database-build-and-deployment?view=sql-server-ver15)
+You can also refer to the microsoft documentation on [developing  and using deployment contributors](https://docs.microsoft.com/sql/ssdt/use-deployment-contributors-to-customize-database-build-and-deployment?view=sql-server-ver15)
 
 ## Basic Usage
 Download the latest release from Github or build yourself. Put the `AgileSqlClub.SqlPackageFilter.dll` file that you will find under `DeploymentContributorFilterer\SqlPackageFilter\bin\Debug` into the same folder as `SqlPackage.exe`, and add these command line parameters to your deployment:
