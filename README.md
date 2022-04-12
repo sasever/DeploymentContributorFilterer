@@ -4,7 +4,7 @@ Generic implementation of a DacFx deployment contributor in .net. Use this tool 
 Original documentation and discussion adapted from:
 *https://the.agilesql.club/2015/01/howto-filter-dacpac-deployments/*
 
-You can also refer to the microsoft documentation on [developing  and using deployment contributors](https://docs.microsoft.com/sql/ssdt/use-deployment-contributors-to-customize-database-build-and-deployment?view=sql-server-ver15)
+You can also refer to the microsoft documentation on [developing  and using deployment contributors](https://docs.microsoft.com/sql/ssdt/use-deployment-contributors-to-customize-database-build-and-deployment?view=sql-server-ver15).
 
 ## Basic Usage
 Download the latest release from Github or build yourself. Put the `AgileSqlClub.SqlPackageFilter.dll` file that you will find under `DeploymentContributorFilterer\SqlPackageFilter\bin\Debug` into the same folder as `SqlPackage.exe`, and add these command line parameters to your deployment:
@@ -25,11 +25,15 @@ Ok so the way the DacFx api works is that you need to put the dll that contains 
 ## Types of Filters
 There are two types of filters: **Keep** and **Ignore**.
 
-**Keep** filters stop objects being dropped when they are in the dacpac but not the destination, if they are in the dacpac and not in the destination *or are different* then they will be created or altered. In  other words  if the original deployment intends to remove an object covered with KEEP specification scope in the destination, deployment gets edited with the intention of protecting (keeping) the destination object. It does not take any action in changing the deployment of the other objects existing in the dacpac that is not covered in the KEEP specification 
+**Keep** filters stop objects being dropped when they are in the dacpac but not the destination, if they are in the dacpac and not in the destination *or are different* then they will be created or altered. 
+
+In  other words  if the original deployment intends to remove an object covered with KEEP specification scope in the destination, deployment gets edited with the intention of protecting (keeping) the destination object. It does not take any action in changing the deployment of the other objects existing in the dacpac that is not covered in the KEEP specification 
 
 Keep are really only ever used in combination with `/p:DropObjectsInSource=True` otherwise they wouldn’t be dropped anyway.
 
-**Ignore** filters stop any sort of operation, create, alter or drop so there is some flexibility. In other words if the original deployment intends to add an object covered with IGNORE specification scope  in the destination, deployment gets edited with the intention of not changing  the destination objects hence ignoring the deployment for IGNORE specification  scope.
+**Ignore** filters stop any sort of operation, create, alter or drop so there is some flexibility. 
+
+In other words if the original deployment intends to add an object covered with IGNORE specification scope  in the destination, deployment gets edited with the intention of not changing  the destination objects hence ignoring the deployment for IGNORE specification  scope.
 
 Once you know what type of filter you want you need to decide what you will filter on, your choices are: **Name**, **SchemaName** and **object type** (stored procedure, function, table, user, role, rolemembership etc etc).
 
