@@ -75,7 +75,7 @@ namespace AgileSqlClub.SqlPackageFilter.Config
             options.RemoveAt(0);
 
 
-            var match = value.Trim(new []{'(',')', ' '});
+            //var match = value.Trim(new []{'(',')', ' '});
 
             if (type == FilterType.Name && match.IndexOf(MultiPartNamedObjectFilterRule.Separator) != -1)
             {
