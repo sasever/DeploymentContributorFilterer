@@ -112,7 +112,7 @@ An example of how the final command in combination with the `SqlPAckage.ex`e whe
 
 ## Important
 
-Using `Ignore` filters may cause deployment to break if you have an object in your deployment which has a dependency on another object/change that currently does not exist in target and should be created within this deployment but somehow got into the `Ignore` scope and hence ignored. Such deployments would fail adn any created objects during the deployments remain deployed. Would advice to do an empty database deployment as a **PreProduction** deployment test to make sure the filtered deployment does not break any dependencies.
+Using `Ignore` filters may cause deployment to break if you have an object in your deployment which has a dependency on another object/change that currently does not exist in target and should be created within this deployment but somehow got into the `Ignore` scope and hence ignored. Such deployments would fail and any created objects during the deployments remain deployed. Would advice to do an empty database deployment as a **PreProduction** deployment test to make sure the filtered deployment does not break any dependencies.
 
 ### Contributing
 
